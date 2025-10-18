@@ -30,7 +30,7 @@ public:
         this->dept = dept;
         this->subject = subject;
         this->salary = salary;
-        this->gpa = new int(gpa);  // Dynamic memory allocation
+        this->gpa = new float(gpa);  // Dynamic memory allocation
     }
 
     Teacher(Teacher &orgObj) // custom Copy constructor
