@@ -12,6 +12,8 @@ public:
     string name;
     string dept;
     string subject;
+    int *gpa; // pointer
+
     // Constructor overloading
     //  Non-parameterized constructor
     Teacher() // Always Public
