@@ -14,6 +14,8 @@ public:
     string subject;
     int *gpa; // pointer
 
+    //compiler default constructor and destructor bhi bana deta hai agar na banaya ho
+    
     // Constructor overloading
     //  Non-parameterized constructor
     Teacher() // Always Public
@@ -71,6 +73,13 @@ public:
         cout << subject << endl;
         cout << salary << endl;
     }
+
+    //compiler default constructor and destructor bhi bana deta hai agar na banaya ho
+    ~Teacher() // Always Public
+    {
+        cout << "Hii, I am destructor\n";
+    }
+
 };
 
 int main()
