@@ -12,7 +12,7 @@ public:
     string name;
     string dept;
     string subject;
-    int *gpa; // pointer for dynamic allocation
+    float *gpa; // pointer for dynamic allocation
 
     //compiler default constructor and destructor bhi bana deta hai agar na banaya ho
     
