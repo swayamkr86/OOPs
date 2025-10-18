@@ -12,7 +12,7 @@ public:
     string name;
     string dept;
     string subject;
-    int *gpa; // pointer
+    int *gpa; // pointer for dynamic allocation
 
     //compiler default constructor and destructor bhi bana deta hai agar na banaya ho
     
@@ -24,12 +24,13 @@ public:
         dept = "CSE";
     }
 
-    Teacher(string name, string dept, string subject, double salary) // Parameterized constructor
+    Teacher(string name, string dept, string subject, double salary, float gpa) // Parameterized constructor
     {
         this->name = name;
         this->dept = dept;
         this->subject = subject;
         this->salary = salary;
+        this->gpa = new int(gpa);  // Dynamic memory allocation
     }
 
     Teacher(Teacher &orgObj) // custom Copy constructor
@@ -78,6 +79,7 @@ public:
     ~Teacher() // Always Public
     {
         cout << "Hii, I am destructor\n";
+        delete this->gpa;   // Dynamic allocation (Avoid memory leak)
     }
 
 };
@@ -95,7 +97,7 @@ int main()
     cout << t1.dept << endl;
 
     // Dynamic allocation, or Teacher pointer;
-    Teacher *T = new Teacher("Utkarsh", "CSE", "Javascript", 37000);
+    Teacher *T = new Teacher("Utkarsh", "CSE", "Javascript", 37000, 9.8);
     cout<< T->name << endl;
     cout<< T->dept << endl;
     T->study();
