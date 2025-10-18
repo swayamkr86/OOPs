@@ -38,6 +38,13 @@ public:
     }
 
     // method or member functions
+    void study()
+    {
+        // this pointer jis object ki abhi baat ho rahi h usko point kar raha hai
+        // Is class ke particular object ko dikhane ke liye
+        cout << this->name << "Studying" << endl;
+    }
+
     void changeDept(string newDept)
     {
         dept = newDept;
@@ -75,6 +82,13 @@ int main()
     t1.subject = "C++";
 
     cout << t1.dept << endl;
+
+    // Dynamic allocation, or Teacher pointer;
+    Teacher *T = new Teacher("Utkarsh", "CSE", "Javascript", 37000);
+    cout<< T->name << endl;
+    cout<< T->dept << endl;
+    T->study();
+    delete T;
 
     return 0;
 }
